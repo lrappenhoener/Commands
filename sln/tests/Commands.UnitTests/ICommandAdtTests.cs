@@ -17,9 +17,9 @@ public abstract class ICommandAdtTests
     [InlineData(false)]
     public void CanExecute_Returns_Correct_Value(bool expected)
     {
-        var sut = CreateSut((state) => expected);
+        var sut = CreateSut((state) => (bool)state);
 
-        sut.CanExecute(null).Should().Be(expected);
+        sut.CanExecute(expected).Should().Be(expected);
     }
 
     [Fact]
