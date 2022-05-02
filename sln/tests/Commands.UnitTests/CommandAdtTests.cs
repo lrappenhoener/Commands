@@ -8,7 +8,6 @@ namespace PCC.Libraries.Commands.UnitTests;
 public abstract class CommandAdtTests
 {
     protected abstract ICommand CreateSut();
-    protected abstract ICommand CreateSut(Action<object> execute, Func<object, bool> canExecute);
     protected abstract ICommand CreateSut(Func<object, bool> canExecute);
     protected abstract ICommand CreateSut(Action<object> execute);
     protected abstract void ChangeCanExecute(ICommand sut);
