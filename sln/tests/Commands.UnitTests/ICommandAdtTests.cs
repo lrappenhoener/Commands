@@ -42,7 +42,8 @@ public abstract class ICommandAdtTests
         var invoked = false;
         var sut = CreateSut(new Action<object>((o) => invoked = ReferenceEquals(o, expectedArg)));
 
-    bool CanExecute(object? parameter);
+        sut.Execute(expectedArg);
 
-    void Execute(object? parameter);*/
+        invoked.Should().BeTrue();
+    }
 }
