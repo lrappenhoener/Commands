@@ -27,7 +27,7 @@ public abstract class CommandAdtTests
     {
         var invoked = false;
         var sut = CreateSut();
-        sut.CanExecuteChanged += (o, e) => invoked = true;
+        sut.CanExecuteChanged += (_, _) => invoked = true;
         
         ChangeCanExecute(sut);
 
