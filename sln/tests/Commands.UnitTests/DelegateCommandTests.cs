@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace PCC.Libraries.Commands.UnitTests;
 
-public class DelegateCommandTests : ICommandAdtTests
+public class DelegateCommandTests : CommandAdtTests
 {
     protected override ICommand CreateSut()
     {

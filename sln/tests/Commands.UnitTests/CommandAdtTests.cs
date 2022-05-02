@@ -5,7 +5,7 @@ using Xunit;
 
 namespace PCC.Libraries.Commands.UnitTests;
 
-public abstract class ICommandAdtTests
+public abstract class CommandAdtTests
 {
     protected abstract ICommand CreateSut();
     protected abstract ICommand CreateSut(Action<object> execute, Func<object, bool> canExecute);
