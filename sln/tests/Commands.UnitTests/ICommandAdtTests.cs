@@ -34,8 +34,13 @@ public abstract class ICommandAdtTests
 
         invoked.Should().BeTrue();
     }
-    
-    /*event EventHandler? CanExecuteChanged;
+
+    [Fact]
+    public void Execute_Successful_Invokes_Action()
+    {
+        var expectedArg = new object();
+        var invoked = false;
+        var sut = CreateSut(new Action<object>((o) => invoked = ReferenceEquals(o, expectedArg)));
 
     bool CanExecute(object? parameter);
 
