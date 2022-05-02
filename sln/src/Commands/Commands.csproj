@@ -5,6 +5,7 @@
     <LangVersion>10</LangVersion>
     <RootNamespace>PCC.Libraries.Commands</RootNamespace>
     <Version>0.0.5</Version>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration) == 'Release'">
