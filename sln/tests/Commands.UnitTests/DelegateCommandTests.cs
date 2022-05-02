@@ -19,4 +19,10 @@ public class DelegateCommandTests : ICommandAdtTests
     {
         return new DelegateCommand((s) => s.ToString(), canExecute);
     }
+
+    protected override void ChangeCanExecute(ICommand sut)
+    {
+        var delegateCommand = sut as DelegateCommand;
+        delegateCommand.FireCanExecuteChanged();
+    }
 }
