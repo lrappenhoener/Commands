@@ -21,6 +21,18 @@ public abstract class ICommandAdtTests
 
         sut.CanExecute(null).Should().Be(expected);
     }
+
+    [Fact]
+    public void CanExecuteChanged_Fires_When_CanExecute_Changed()
+    {
+        var invoked = false;
+        var sut = CreateSut();
+        sut.CanExecuteChanged += (o, e) => invoked = true;
+        
+        ChangeCanExecute(sut);
+
+        invoked.Should().BeTrue();
+    }
     
     /*event EventHandler? CanExecuteChanged;
 
