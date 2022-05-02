@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <RootNamespace>PCC.Libraries.Commands</RootNamespace>
+    <Version>0.0.5</Version>
   </PropertyGroup>
 
+  <PropertyGroup Condition="$(Configuration) == 'Release'">
+    <OutputPath>../../../build/release</OutputPath>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>g:\Packages\Private</PackageOutputPath>
+  </PropertyGroup>
 </Project>
