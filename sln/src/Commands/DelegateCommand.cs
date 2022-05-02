@@ -23,4 +23,9 @@ public class DelegateCommand : ICommand
     }
 
     public event EventHandler? CanExecuteChanged;
+
+    public void FireCanExecuteChanged()
+    {
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    }
 }
