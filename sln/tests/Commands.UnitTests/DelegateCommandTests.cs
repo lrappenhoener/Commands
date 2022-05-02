@@ -9,6 +9,11 @@ public class DelegateCommandTests : ICommandAdtTests
     {
         return new DelegateCommand((o) => { }, (o) => true);
     }
+    
+    protected override ICommand CreateSut(Action<object> execute)
+    {
+        return new DelegateCommand(execute, (o) => true);
+    }
 
     protected override ICommand CreateSut(Action<object> execute, Func<object, bool> canExecute)
     {
