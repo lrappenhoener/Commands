@@ -7,22 +7,22 @@ public class DelegateCommandTests : CommandAdtTests
 {
     protected override ICommand CreateSut()
     {
-        return new DelegateCommand((o) => { }, (o) => true);
+        return new DelegateCommand((_) => { }, (_) => true);
     }
     
-    protected override ICommand CreateSut(Action<object> execute)
+    protected override ICommand CreateSut(Action<object?> execute)
     {
-        return new DelegateCommand(execute, (o) => true);
+        return new DelegateCommand(execute, (_) => true);
     }
 
-    protected override ICommand CreateSut(Func<object, bool> canExecute)
+    protected override ICommand CreateSut(Func<object?, bool> canExecute)
     {
-        return new DelegateCommand((s) => s.ToString(), canExecute);
+        return new DelegateCommand((_) => { }, canExecute);
     }
 
     protected override void ChangeCanExecute(ICommand sut)
     {
         var delegateCommand = sut as DelegateCommand;
-        delegateCommand.FireCanExecuteChanged();
+        delegateCommand?.FireCanExecuteChanged();
     }
 }

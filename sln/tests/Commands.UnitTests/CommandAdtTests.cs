@@ -8,8 +8,8 @@ namespace PCC.Libraries.Commands.UnitTests;
 public abstract class CommandAdtTests
 {
     protected abstract ICommand CreateSut();
-    protected abstract ICommand CreateSut(Func<object, bool> canExecute);
-    protected abstract ICommand CreateSut(Action<object> execute);
+    protected abstract ICommand CreateSut(Func<object?, bool> canExecute);
+    protected abstract ICommand CreateSut(Action<object?> execute);
     protected abstract void ChangeCanExecute(ICommand sut);
     
     [Theory]
@@ -17,7 +17,7 @@ public abstract class CommandAdtTests
     [InlineData(false)]
     public void CanExecute_Returns_Correct_Value(bool expected)
     {
-        var sut = CreateSut((state) => (bool)state);
+        var sut = CreateSut((state) => state != null && (bool)state);
 
         sut.CanExecute(expected).Should().Be(expected);
     }
@@ -39,7 +39,7 @@ public abstract class CommandAdtTests
     {
         var expectedArg = new object();
         var invoked = false;
-        var sut = CreateSut(new Action<object>((o) => invoked = ReferenceEquals(o, expectedArg)));
+        var sut = CreateSut(new Action<object?>((o) => invoked = ReferenceEquals(o, expectedArg)));
 
         sut.Execute(expectedArg);
 
