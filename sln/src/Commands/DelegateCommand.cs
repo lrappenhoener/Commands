@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace PCC.Libraries.Commands;
+namespace Commands;
 
 public class DelegateCommand : ICommand
 {

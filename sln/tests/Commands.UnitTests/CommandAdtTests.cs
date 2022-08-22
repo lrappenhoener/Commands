@@ -3,7 +3,7 @@ using System.Windows.Input;
 using FluentAssertions;
 using Xunit;
 
-namespace PCC.Libraries.Commands.UnitTests;
+namespace Commands.UnitTests;
 
 public abstract class CommandAdtTests
 {

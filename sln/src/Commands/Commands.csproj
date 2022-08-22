@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>10</LangVersion>
-    <RootNamespace>PCC.Libraries.Commands</RootNamespace>
+    <RootNamespace>Commands</RootNamespace>
     <Version>0.0.5</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>

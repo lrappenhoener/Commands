@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace PCC.Libraries.Commands.UnitTests;
+namespace Commands.UnitTests;
 
 public class DelegateCommandTests : CommandAdtTests
 {
