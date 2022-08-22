@@ -1,5 +1,7 @@
 obj/
 build/
 .idea/
+.vs/
 bin/
+*ncrunch*
 *DotSettings*
